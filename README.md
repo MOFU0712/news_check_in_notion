@@ -3,6 +3,8 @@
 Notionデータベースからニュースを取得し、Claude APIで処理してnoteブログ用に整形するツールです。
 Google Colabでの実行を想定しています。
 
+![](abstract.jpg)
+
 ## 前提
 
 - Chrome拡張機能「Notion Web Clipper」を使って、ニュース記事をNotionデータベースに保存していること
