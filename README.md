@@ -3,6 +3,18 @@
 Notionデータベースからニュースを取得し、Claude APIで処理してnoteブログ用に整形するツールです。
 Google Colabでの実行を想定しています。
 
+## 前提
+
+- Chrome拡張機能「Notion Web Clipper」を使って、ニュース記事をNotionデータベースに保存していること
+- 保存されたニュースに対して、以下のプロパティを入力してあること
+    - flag：このプログラムで抽出したいニュースに'pick'を選択
+    - summary：このプログラムの要約（Notion AIを使うと簡単）
+    - tag：ニュースの分類
+    - pickup_type：day/week/monthのどれかを選択。ニュースの重要度を表す。（month > week > day）
+        - コードでpickup_type = dayとした場合、flagが'pick'で、pickup_typeが'day', 'week', 'month'のニュースがピックアップされる
+        - コードでpickup_type = weekとした場合、flagが'pick'で、pickup_typeが'week', 'month'のニュースがピックアップされる
+        - コードでpickup_type = monthとした場合、flagが'pick'で、pickup_typeが'month'のニュースがピックアップされる
+
 ## 機能
 
 - Notionデータベースからフラグ付きニュース記事を取得
